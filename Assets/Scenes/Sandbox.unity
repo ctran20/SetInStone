@@ -4836,7 +4836,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 9.174927, y: 9.174927}
+  m_SizeDelta: {x: 6.8830566, y: 6.8830566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885798300
 MonoBehaviour:
@@ -7746,6 +7746,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 82096aab38f01cb40a1cbf8629a810ba, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45635d5190a12bc4884469b7dcafa846, type: 3}
+--- !u!20 &1249253792 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2000000, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    type: 3}
+  m_PrefabInstance: {fileID: 1773614119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1257147655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10625,26 +10631,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: movementSettings.JumpForce
-      value: 50
+    - target: {fileID: 11400006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: movementSettings.ForwardSpeed
-      value: 6
+    - target: {fileID: 11400006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: StrideInterval
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: movementSettings.RunMultiplier
-      value: 1.5
+    - target: {fileID: 1496930856, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 1249253792}
+    - target: {fileID: 1496930856, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: zoomedInFOV
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496930856, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: zoomedInSensitivity
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4988415018329660104, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 359873140}
-    - target: {fileID: 4988415018329660104, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: gameoverScreen
       value: 
       objectReference: {fileID: 359873140}
     m_RemovedComponents: []

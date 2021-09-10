@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 33261766548503038}
   - component: {fileID: 23872222839853144}
   - component: {fileID: 1347048557076185}
+  - component: {fileID: 1496930856}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -586,10 +587,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 2000000}
   range: 300
-  damage: 35
+  damage: 30
   muzzleFlash: {fileID: 198982068813255966}
   hitEffect: {fileID: 5723364367199334871, guid: b5ebc38e7c95fb24aa05d2f47a7226f2,
     type: 3}
+--- !u!114 &1496930856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347048557076184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55141215daea70647bd184f9433a736f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1980029760922184
 GameObject:
   m_ObjectHideFlags: 0
