@@ -11,24 +11,35 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] float coolDownTime = 0.5f;
+
+    bool coolDown = false;
+
+    private void OnEnable()
+    {
+        coolDown = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1")){
-            Shoot();
+        if(Input.GetMouseButton(0) && coolDown == false){
+            StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
+        coolDown = true;
         if (ammoSlot.GetCurrentAmmo() > 0)
         {
             PlayMuzzleFlash();
             ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo();
         }
-        
+
+        yield return new WaitForSeconds(coolDownTime);
+        coolDown = false;
     }
 
     private void PlayMuzzleFlash()
