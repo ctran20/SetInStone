@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 4988415018329660104}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,10 +249,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2000000}
   movementSettings:
-    ForwardSpeed: 8
+    ForwardSpeed: 6
     BackwardSpeed: 4
     StrafeSpeed: 4
-    RunMultiplier: 2
+    RunMultiplier: 1.5
     RunKey: 304
     JumpForce: 50
     SlopeCurveModifier:
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0090c752439deb243a7f36bfda25c2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameoverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 0}
 --- !u!1 &924777448
 GameObject:
   m_ObjectHideFlags: 0
