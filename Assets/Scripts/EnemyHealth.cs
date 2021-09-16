@@ -6,12 +6,12 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
-    CapsuleCollider collider;
+    CapsuleCollider collidr;
 
     bool isDead = false;
 
     void Start(){
-        collider = GetComponent<CapsuleCollider>();
+        collidr = GetComponent<CapsuleCollider>();
     }
 
     public bool IsDead(){
@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
         hitPoints -= damage;
         if(hitPoints < 0 && !isDead){
             Die();
-            collider.enabled = false;
+            collidr.enabled = false;
             Destroy(gameObject, 10f);
         }
     }
