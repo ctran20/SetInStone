@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         if(hitPoints < 0 && !isDead){
             Die();
             collidr.enabled = false;
-            Destroy(gameObject, 10f);
+            Destroy(gameObject, 5f);
         }
     }
 
