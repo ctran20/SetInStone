@@ -230,7 +230,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100006}
-  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
+  m_Material: {fileID: 13400000, guid: 989d0eb9e7c666f458b35cfdcbfb1818, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -346,11 +346,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoSlots:
   - ammoType: 0
-    ammoAmount: 50
-  - ammoType: 1
-    ammoAmount: 10
-  - ammoType: 2
     ammoAmount: 100
+  - ammoType: 1
+    ammoAmount: 100
+  - ammoType: 2
+    ammoAmount: 1000
 --- !u!1 &634611367
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +578,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6099699255818341100, guid: 49a832bf04e27dc48962c4cce44ad453,
         type: 3}
+      propertyPath: damage
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099699255818341100, guid: 49a832bf04e27dc48962c4cce44ad453,
+        type: 3}
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 2000000}
@@ -764,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 5449162790903978435, guid: 9a495fd2c3af5ff4c846cc3654ba5156,
         type: 3}
       propertyPath: damage
-      value: 31
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5449162790903978435, guid: 9a495fd2c3af5ff4c846cc3654ba5156,
         type: 3}
@@ -864,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 4540279230544900524, guid: 2b53054355f759d48b6248c1b5f15472,
         type: 3}
       propertyPath: damage
-      value: 21
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4540279230544900524, guid: 2b53054355f759d48b6248c1b5f15472,
         type: 3}
