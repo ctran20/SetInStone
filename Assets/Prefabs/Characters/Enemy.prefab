@@ -1768,7 +1768,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.2
+  m_Radius: 0.25
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.96, z: 0}
@@ -1839,6 +1839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  body: {fileID: 0}
+  deadAnimation: {fileID: 0}
 --- !u!114 &3275597694286758167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,3 +1854,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  hitAnimation: {fileID: 0}
