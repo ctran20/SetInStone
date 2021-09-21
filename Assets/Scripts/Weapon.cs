@@ -27,11 +27,19 @@ public class Weapon : MonoBehaviour
         if(Input.GetMouseButton(0) && coolDown == false){
             StartCoroutine(Shoot());
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            GetComponent<Animator>().SetBool("Shooting", false);
+        }
+        
     }
 
     IEnumerator Shoot()
     {
         coolDown = true;
+        GetComponent<Animator>().SetTrigger("Shot");
+        GetComponent<Animator>().SetBool("Shooting", true);
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             PlayMuzzleFlash();
