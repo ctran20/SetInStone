@@ -11334,26 +11334,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1578701172924800667, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    - target: {fileID: 924777450, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711070852651730, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6557072
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711070852651730, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.49281323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711070852651730, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7751
+      objectReference: {fileID: 0}
+    - target: {fileID: 23235155908590976, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
-      propertyPath: coolDownTime
-      value: 2
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4988415018329660104, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 359873140}
-    - target: {fileID: 5771825424139333610, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: coolDownTime
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 9195921044967323716, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1001 &1774456388
