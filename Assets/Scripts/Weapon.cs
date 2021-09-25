@@ -50,6 +50,20 @@ public class Weapon : MonoBehaviour
         coolDown = true;
         GetComponent<Animator>().SetTrigger("Shot");
         GetComponent<Animator>().SetBool("Shooting", true);
+
+        if (ammoType == AmmoType.BlueJuice)
+        {
+            
+        }
+        else if (ammoType == AmmoType.YellowJuice)
+        {
+            AudioManager.PlaySound("blaster", 0.2f);
+        }
+        else
+        {
+
+        }
+
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             PlayMuzzleFlash();
