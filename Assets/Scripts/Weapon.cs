@@ -51,24 +51,30 @@ public class Weapon : MonoBehaviour
         GetComponent<Animator>().SetTrigger("Shot");
         GetComponent<Animator>().SetBool("Shooting", true);
 
-        if (ammoType == AmmoType.BlueJuice)
-        {
-            
-        }
-        else if (ammoType == AmmoType.YellowJuice)
-        {
-            AudioManager.PlaySound("blaster", 0.2f);
-        }
-        else
-        {
-
-        }
-
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
+            if (ammoType == AmmoType.BlueJuice)
+            {
+                AudioManager.PlaySound("blaster", 0.15f, 3);
+            }
+            else if (ammoType == AmmoType.YellowJuice)
+            {
+                AudioManager.PlaySound("blaster", 0.25f, 0.3f);
+                AudioManager.PlaySound("explosion", 0.1f, 1);
+            }
+            else
+            {
+                AudioManager.PlaySound("blaster", 0.15f, 1.8f);
+
+            }
+
             PlayMuzzleFlash();
             ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo(ammoType);
+        }
+        else
+        {
+            AudioManager.PlaySound("empty_ammo", 0.2f, 2);
         }
 
         yield return new WaitForSeconds(coolDownTime);

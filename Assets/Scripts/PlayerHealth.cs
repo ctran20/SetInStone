@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
         if (hitPoints < 0)
         {
             GetComponent<DeathHandler>().HandleDeath();
+            AudioManager.PlaySound("lose", 0.5f, 0.6f);
         }
     }
 }

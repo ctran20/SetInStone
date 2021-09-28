@@ -2,12 +2,12 @@
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioClip pistol, blaster, zapper, explosion, win, lose;
+    public static AudioClip empty_ammo, blaster, zapper, explosion, win, lose;
     static AudioSource audioSrc;
 
     private void Start()
     {
-        pistol = Resources.Load<AudioClip>("pistol");
+        empty_ammo = Resources.Load<AudioClip>("empty_ammo");
         blaster = Resources.Load<AudioClip>("blaster");
         zapper = Resources.Load<AudioClip>("zapper");
         lose = Resources.Load<AudioClip>("lose");
@@ -17,18 +17,16 @@ public class AudioManager : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
     }
 
-    public static void PlaySound(string clip, float vol)
+    public static void PlaySound(string clip, float vol, float pitch)
     {
+        audioSrc.pitch = pitch;
         switch (clip)
         {
-            case "pistol":
-                audioSrc.PlayOneShot(pistol, vol);
+            case "empty_ammo":
+                audioSrc.PlayOneShot(empty_ammo, vol);
                 break;
             case "blaster":
                 audioSrc.PlayOneShot(blaster, vol);
-                break;
-            case "zapper":
-                audioSrc.PlayOneShot(zapper, vol);
                 break;
             case "lose":
                 audioSrc.PlayOneShot(lose, vol);
