@@ -9717,6 +9717,11 @@ PrefabInstance:
       objectReference: {fileID: 7349918888377967996}
     - target: {fileID: 1722856032656924224, guid: f783ccd138e305a408ae5460be052563,
         type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722856032656924224, guid: f783ccd138e305a408ae5460be052563,
+        type: 3}
       propertyPath: hitPoints
       value: 60
       objectReference: {fileID: 0}

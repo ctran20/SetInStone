@@ -202,6 +202,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1722856032656924224, guid: f783ccd138e305a408ae5460be052563,
         type: 3}
+      propertyPath: enemyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722856032656924224, guid: f783ccd138e305a408ae5460be052563,
+        type: 3}
       propertyPath: hitPoints
       value: 500
       objectReference: {fileID: 0}

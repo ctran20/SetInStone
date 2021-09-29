@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] float hitPoints = 100f;
     [SerializeField] GameObject body;
     [SerializeField] GameObject deadAnimation;
+    [SerializeField] EnemyType enemyType;
     CapsuleCollider collidr;
 
     bool isDead = false;
@@ -32,7 +33,17 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        if(deadAnimation){
+        if(enemyType == EnemyType.Robot){
+            AudioManager.PlaySound("empty_ammo", 0.2f, 1);
+        }else if (enemyType == EnemyType.Drone)
+        {
+            AudioManager.PlaySound("explosion", 0.3f, 1);
+        }
+        else if(enemyType == EnemyType.BigBot){
+            AudioManager.PlaySound("mustDestroy", 0.2f, 1);
+        }
+
+        if (deadAnimation){
             deadAnimation.SetActive(true);
             Destroy(body);
         }
