@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
     [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] AudioSource hurt;
 
     private void DisplayHealth()
     {
@@ -16,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     {
         DisplayHealth();
         hitPoints -= damage;
+        hurt.Play();
         if (hitPoints < 0)
         {
             GetComponent<DeathHandler>().HandleDeath();

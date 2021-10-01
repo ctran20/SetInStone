@@ -9,12 +9,15 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject body;
     [SerializeField] GameObject deadAnimation;
     [SerializeField] EnemyType enemyType;
+    AudioSource audioSrc;
+
     CapsuleCollider collidr;
 
     bool isDead = false;
 
     void Start(){
         collidr = GetComponent<CapsuleCollider>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     public bool IsDead(){
@@ -34,20 +37,21 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         if(enemyType == EnemyType.Robot){
-            AudioManager.PlaySound("empty_ammo", 0.2f, 1);
+            audioSrc.PlayOneShot(Resources.Load<AudioClip>("metal-impact"), 0.2f);
         }else if (enemyType == EnemyType.Drone)
         {
-            AudioManager.PlaySound("explosion", 0.3f, 1);
+            audioSrc.PlayOneShot(Resources.Load<AudioClip>("explosion"), 0.3f);
         }
         else if(enemyType == EnemyType.BigBot){
-            AudioManager.PlaySound("mustDestroy", 0.2f, 1);
+            audioSrc.PlayOneShot(Resources.Load<AudioClip>("explosion"), 0.3f);
+            audioSrc.PlayOneShot(Resources.Load<AudioClip>("electricity"), 0.3f);
         }
 
         if (deadAnimation){
             deadAnimation.SetActive(true);
             Destroy(body);
         }
-
+        audioSrc.pitch = 1;
         GetComponent<Animator>().SetTrigger("die");
         isDead = true;
     }

@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 3591705586893466444}
   - component: {fileID: 1722856032656924224}
   - component: {fileID: 3275597694286758167}
-  - component: {fileID: 2746310398043527551}
+  - component: {fileID: 2831046433170191371}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1842,6 +1842,7 @@ MonoBehaviour:
   hitPoints: 100
   body: {fileID: 0}
   deadAnimation: {fileID: 0}
+  enemyType: 0
 --- !u!114 &3275597694286758167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,7 +1857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   hitAnimation: {fileID: 0}
---- !u!82 &2746310398043527551
+--- !u!82 &2831046433170191371
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1869,7 +1870,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
