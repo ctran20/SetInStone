@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,15 +10,17 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject body;
     [SerializeField] GameObject deadAnimation;
     [SerializeField] EnemyType enemyType;
+    [SerializeField] Slider slider;
     AudioSource audioSrc;
-
     CapsuleCollider collidr;
 
     bool isDead = false;
+    float initialHealth;
 
     void Start(){
         collidr = GetComponent<CapsuleCollider>();
         audioSrc = GetComponent<AudioSource>();
+        initialHealth = hitPoints;
     }
 
     public bool IsDead(){
@@ -30,8 +33,10 @@ public class EnemyHealth : MonoBehaviour
         if(hitPoints < 0 && !isDead){
             Die();
             collidr.enabled = false;
+            slider.gameObject.transform.GetChild(1).gameObject.SetActive(false);
             Destroy(gameObject, 4f);
         }
+        if (slider) slider.value = hitPoints / initialHealth;
     }
 
     private void Die()
