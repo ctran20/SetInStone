@@ -4679,6 +4679,7 @@ GameObject:
   - component: {fileID: 7048820091773192685}
   - component: {fileID: 7049843815273555051}
   - component: {fileID: 7344058799193194049}
+  - component: {fileID: 1026478081}
   m_Layer: 0
   m_Name: Red Energy
   m_TagString: Untagged
@@ -9296,6 +9297,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.35, y: 0.35, z: 0.35}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1026478081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140231283861300477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4510bd40b83d3954f90b8d6d2ec1ddc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 8
 --- !u!1 &7140279420860480533
 GameObject:
   m_ObjectHideFlags: 0
@@ -9322,8 +9336,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7140279420860480533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.067}
-  m_LocalScale: {x: 0.73404, y: 0.73404, z: 0.73404}
+  m_LocalPosition: {x: 0, y: 0, z: 0.189}
+  m_LocalScale: {x: 0.73404, y: 0.73404, z: 1.0402081}
   m_Children: []
   m_Father: {fileID: 7134716215490486953}
   m_RootOrder: 1
@@ -9464,7 +9478,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -2
+      scalar: -6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
