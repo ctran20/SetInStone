@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
     PlayerHealth target;
     [SerializeField] float damage = 10f;
     [SerializeField] ParticleSystem hitAnimation;
+    [SerializeField] GameObject fireball;
 
     void Start()
     {
@@ -19,5 +20,10 @@ public class EnemyAttack : MonoBehaviour
         target.TakeDamage(damage);
         if (hitAnimation ) hitAnimation.Play();
         target.GetComponent<DisplayDamage>().ShowDamageImpact();
+    }
+
+    public void BossFireEvent()
+    {
+        Instantiate(fireball, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+10, gameObject.transform.position.z+2) , new Quaternion(0, 0, 0, 0));
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFire : MonoBehaviour
 {
-    [SerializeField] int MoveSpeed = 5;
+    [SerializeField] int MoveSpeed = 10;
     Vector3 target;
 
     int MinDist = 0;
