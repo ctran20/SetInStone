@@ -8,7 +8,7 @@ public class BossAI : MonoBehaviour
 {
     [SerializeField] float chaseRange = 15f;
     
-    float turnSpeed = 5f;
+    float turnSpeed = 0.4f;
     Transform target;
     EnemyHealth health;
     float distanceToTarget = Mathf.Infinity;
