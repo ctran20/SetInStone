@@ -26,4 +26,11 @@ public class EnemyAttack : MonoBehaviour
     {
         Instantiate(fireball, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+10, gameObject.transform.position.z+2) , new Quaternion(0, 0, 0, 0));
     }
+
+    public void BossLaserHitEvent()
+    {
+        if (target == null) return;
+        target.TakeDamage(5);
+        target.GetComponent<DisplayDamage>().ShowDamageImpact();
+    }
 }
