@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] float damage = 10f;
     [SerializeField] ParticleSystem hitAnimation;
     [SerializeField] GameObject fireball;
+    public bool inLaser = false;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class EnemyAttack : MonoBehaviour
 
     public void BossLaserHitEvent()
     {
-        if (target == null) return;
+        if (target == null || !inLaser) return;
         target.TakeDamage(5);
         target.GetComponent<DisplayDamage>().ShowDamageImpact();
     }

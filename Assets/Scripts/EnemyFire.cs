@@ -17,13 +17,11 @@ public class EnemyFire : MonoBehaviour
 
     void Update()
     {
-
             if (Vector3.Distance(transform.position, target) >= MinDist)
             {
 
                 transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             }
-
     }
 
     private void OnCollisionEnter(Collision collision)
