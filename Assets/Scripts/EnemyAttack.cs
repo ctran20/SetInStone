@@ -9,6 +9,10 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] ParticleSystem hitAnimation;
     [SerializeField] GameObject fireball;
     public bool inLaser = false;
+    public bool inFront = false;
+    public bool inBack = false;
+    public bool inLeft = false;
+    public bool inRight = false;
 
     void Start()
     {
