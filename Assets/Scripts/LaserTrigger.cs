@@ -10,7 +10,7 @@ public class LaserTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            boss.GetComponent<EnemyAttack>().inLaser = true;
+            boss.GetComponent<BossAttack>().inLaser = true;
         }
     }
 
@@ -18,7 +18,7 @@ public class LaserTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            boss.GetComponent<EnemyAttack>().inLaser = false;
+            boss.GetComponent<BossAttack>().inLaser = false;
         }
     }
 }

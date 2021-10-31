@@ -20,19 +20,19 @@ public class BossTriggerZone : MonoBehaviour
         {
             if(zone == TriggerBox.Front)
             {
-                boss.GetComponent<EnemyAttack>().inFront = true;
+                boss.GetComponent<BossAttack>().inFront = true;
             }
             else if (zone == TriggerBox.Left)
             {
-                boss.GetComponent<EnemyAttack>().inLeft = true;
+                boss.GetComponent<BossAttack>().inLeft = true;
             }
             else if (zone == TriggerBox.Right)
             {
-                boss.GetComponent<EnemyAttack>().inRight = true;
+                boss.GetComponent<BossAttack>().inRight = true;
             }
             else
             {
-                boss.GetComponent<EnemyAttack>().inBack = true;
+                boss.GetComponent<BossAttack>().inBack = true;
             }
         }
     }
@@ -43,19 +43,19 @@ public class BossTriggerZone : MonoBehaviour
         {
             if (zone == TriggerBox.Front)
             {
-                boss.GetComponent<EnemyAttack>().inFront = false;
+                boss.GetComponent<BossAttack>().inFront = false;
             }
             else if (zone == TriggerBox.Left)
             {
-                boss.GetComponent<EnemyAttack>().inLeft = false;
+                boss.GetComponent<BossAttack>().inLeft = false;
             }
             else if (zone == TriggerBox.Right)
             {
-                boss.GetComponent<EnemyAttack>().inRight = false;
+                boss.GetComponent<BossAttack>().inRight = false;
             }
             else
             {
-                boss.GetComponent<EnemyAttack>().inBack = false;
+                boss.GetComponent<BossAttack>().inBack = false;
             }
         }
     }
