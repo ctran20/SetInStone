@@ -12,6 +12,7 @@ public class EnemyFire : MonoBehaviour
 
     private void Start()
     {
+        Destroy(gameObject, 4f);
         transform.LookAt(FindObjectOfType<PlayerHealth>().transform);
         player = FindObjectOfType<PlayerHealth>().gameObject;
         target = player.transform.position;
