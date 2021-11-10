@@ -9,6 +9,7 @@ public class BossAttack : MonoBehaviour
     [SerializeField] GameObject laser;
     [SerializeField] GameObject leftLava;
     [SerializeField] GameObject rightLava;
+    AudioSource audioSrc;
 
     public bool inLaser = false;
     public bool inFront = false;
@@ -20,6 +21,7 @@ public class BossAttack : MonoBehaviour
 
     void Start()
     {
+        audioSrc = GetComponent<AudioSource>();
         target = FindObjectOfType<PlayerHealth>();
     }
 
@@ -42,6 +44,7 @@ public class BossAttack : MonoBehaviour
         }
         else if (attack > 2 && attack < 5)
         {
+            audioSrc.PlayOneShot(Resources.Load<AudioClip>("lazer"), 0.2f);
             if (inFront) GetComponent<Animator>().SetTrigger("laserattack");
             laser.SetActive(true);
         }
@@ -54,10 +57,12 @@ public class BossAttack : MonoBehaviour
 
     public void IdleReset(){
         laser.SetActive(false);
+        audioSrc.Stop();
     }
 
     public void LaunchLava(bool left){
-        if(left){
+        audioSrc.PlayOneShot(Resources.Load<AudioClip>("swipe"), 0.4f);
+        if (left){
             leftLava.GetComponent<Animator>().SetTrigger("play");
         }
         else{
@@ -66,6 +71,7 @@ public class BossAttack : MonoBehaviour
     }
     public void BossFireEvent()
     {
+        audioSrc.PlayOneShot(Resources.Load<AudioClip>("blaster"), 0.1f);
         Instantiate(fireball, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z + 2), new Quaternion(0, 0, 0, 0));
     }
 

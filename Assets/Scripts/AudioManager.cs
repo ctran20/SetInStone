@@ -2,11 +2,13 @@
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioClip empty_ammo, blaster, zapper, explosion, win, lose, hurt;
+    public static AudioClip empty_ammo, blaster, zapper, explosion, win, lose, hurt, swipe, lazer;
     static AudioSource audioSrc;
 
     private void Start()
     {
+        swipe = Resources.Load<AudioClip>("swipe");
+        lazer = Resources.Load<AudioClip>("lazer");
         hurt = Resources.Load<AudioClip>("hurt");
         empty_ammo = Resources.Load<AudioClip>("empty_ammo");
         blaster = Resources.Load<AudioClip>("blaster");
@@ -23,6 +25,12 @@ public class AudioManager : MonoBehaviour
         audioSrc.pitch = pitch;
         switch (clip)
         {
+            case "swipe":
+                audioSrc.PlayOneShot(swipe, vol);
+                break;
+            case "lazer":
+                audioSrc.PlayOneShot(lazer, vol);
+                break;
             case "hurt":
                 audioSrc.PlayOneShot(hurt, vol);
                 break;
