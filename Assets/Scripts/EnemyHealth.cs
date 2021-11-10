@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] float destroyTime = 4f;
     [SerializeField] float hitPoints = 100f;
     [SerializeField] GameObject body;
     [SerializeField] GameObject deadAnimation;
@@ -34,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
             Die();
             collidr.enabled = false;
             slider.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-            Destroy(gameObject, 4f);
+            Destroy(gameObject, destroyTime);
         }
         if (slider) slider.value = hitPoints / initialHealth;
     }
