@@ -79,6 +79,10 @@ public class BossAttack : MonoBehaviour
     {
         if (target == null || !inLaser) return;
         target.TakeDamage(5);
-        target.GetComponent<DisplayDamage>().ShowDamageImpact();
+    }
+
+    public void BossSpawningEvent()
+    {
+        Instantiate(fireball, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z + 2), new Quaternion(0, 0, 0, 0));
     }
 }

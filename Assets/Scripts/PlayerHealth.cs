@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         DisplayHealth();
+        GetComponent<DisplayDamage>().ShowDamageImpact();
         hitPoints -= damage;
         hurt.Play();
         if (hitPoints < 0)
