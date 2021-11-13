@@ -9,6 +9,8 @@ public class BossAttack : MonoBehaviour
     [SerializeField] GameObject laser;
     [SerializeField] GameObject leftLava;
     [SerializeField] GameObject rightLava;
+    [SerializeField] ParticleSystem portal;
+    [SerializeField] GameObject bots;
     AudioSource audioSrc;
 
     public bool inLaser = false;
@@ -42,11 +44,16 @@ public class BossAttack : MonoBehaviour
                 GetComponent<Animator>().SetTrigger("swiperight");
             }
         }
-        else if (attack > 2 && attack < 5)
+        else if (attack > 2 && attack < 5 && inFront)
         {
             audioSrc.PlayOneShot(Resources.Load<AudioClip>("lazer"), 0.2f);
-            if (inFront) GetComponent<Animator>().SetTrigger("laserattack");
+            GetComponent<Animator>().SetTrigger("laserattack");
             laser.SetActive(true);
+        }
+        else if (attack > 2 && attack < 5 && inBack)
+        {
+            audioSrc.PlayOneShot(Resources.Load<AudioClip>("lazer"), 0.1f);
+            GetComponent<Animator>().SetTrigger("spawn");
         }
         else
         {
@@ -83,6 +90,8 @@ public class BossAttack : MonoBehaviour
 
     public void BossSpawningEvent()
     {
-        Instantiate(fireball, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z + 2), new Quaternion(0, 0, 0, 0));
+        portal.Play();
+        Instantiate(bots, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z + 4), new Quaternion(0, 0, 0, 0));
+        Instantiate(bots, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z + 4), new Quaternion(0, 0, 0, 0));
     }
 }

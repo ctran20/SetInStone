@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject deadAnimation;
     [SerializeField] EnemyType enemyType;
     [SerializeField] Slider slider;
+    [SerializeField] ParticleSystem smoke;
     AudioSource audioSrc;
     CapsuleCollider collidr;
 
@@ -34,10 +35,13 @@ public class EnemyHealth : MonoBehaviour
         if(hitPoints < 0 && !isDead){
             Die();
             collidr.enabled = false;
-            slider.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            if(slider) slider.gameObject.transform.GetChild(1).gameObject.SetActive(false);
             Destroy(gameObject, destroyTime);
         }
-        if (slider) slider.value = hitPoints / initialHealth;
+        if (slider) {
+            slider.value = hitPoints / initialHealth;
+            if (slider.value < 0.5) smoke.Play();
+        } 
     }
 
     private void Die()
