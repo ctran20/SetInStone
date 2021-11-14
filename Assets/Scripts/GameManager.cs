@@ -2,8 +2,6 @@
 
 public class GameManager : MonoBehaviour
 {
-    private static GameObject instance;
-
     [SerializeField] GameObject playerA1;
     [SerializeField] GameObject playerA2;
     [SerializeField] GameObject playerA3;
@@ -15,32 +13,25 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject boss;
 
-    int currentStage = 1;
+    Data data;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        if (instance == null)
-        {
-            instance = gameObject;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-    }
     void Start()
     {
-        if(currentStage == 1){
+        data = FindObjectOfType<Data>().gameObject.GetComponent<Data>();
+
+        if (data.getStage() == 1){
             playerA1.SetActive(true);
+            area1.SetActive(true);
         }
-        else if (currentStage == 1)
+        else if (data.getStage() == 2)
         {
             playerA2.SetActive(true);
+            area2.SetActive(true);
         }
         else{
             playerA3.SetActive(true);
+            area3.SetActive(true);
+            boss.SetActive(true);
         }
     }
 
@@ -52,7 +43,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 //enterArea2
-                currentStage = 2;
+                data.setStage(2);
                 area1.SetActive(false);
                 break;
             case 3:
@@ -61,7 +52,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 4:
                 //enterArea3
-                currentStage = 3;
+                data.setStage(3);
                 area2.SetActive(false);
                 boss.SetActive(true);
                 break;

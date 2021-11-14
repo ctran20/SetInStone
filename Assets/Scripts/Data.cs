@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static GameObject instance;
+    int currentStage = 1;
+
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = gameObject;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int getStage(){
+        return currentStage;
+    }
+
+    public void setStage(int stage){
+        currentStage = stage;
     }
 }
