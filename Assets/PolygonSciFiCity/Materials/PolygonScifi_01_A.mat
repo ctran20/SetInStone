@@ -94,4 +94,4 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 13.663098, g: 0.32224286, b: 0.32224286, a: 0}
+    - _EmissionColor: {r: 3.4157748, g: 0.08941819, b: 0.08941819, a: 0}
