@@ -13,13 +13,18 @@ public class PlayerHealth : MonoBehaviour
     {
         healthText.text = hitPoints.ToString();
     }
+
+    public void Heal(float amount){
+        hitPoints += amount;
+        DisplayHealth();
+    }
     public void TakeDamage(float damage)
     {
-        DisplayHealth();
         GetComponent<DisplayDamage>().ShowDamageImpact();
         hitPoints -= damage;
+        DisplayHealth();
         hurt.Play();
-        if (hitPoints < 0)
+        if (hitPoints <= 0)
         {
             GetComponent<DeathHandler>().HandleDeath();
             AudioManager.PlaySound("lose", 0.5f, 0.6f);

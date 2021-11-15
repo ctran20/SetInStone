@@ -9,6 +9,7 @@ public class AmmoPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
+            AudioManager.PlaySound("collect", 0.1f, 1f);
             FindObjectOfType<Ammo>().IncreaseCurrentAmmo(ammoType, ammoAmount);
             Destroy(gameObject);
         }

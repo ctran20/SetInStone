@@ -5,6 +5,12 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
     [SerializeField] AmmoSlot[] ammoSlots;
+    PlayerHealth player;
+
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerHealth>();
+    }
 
     [System.Serializable]
     private class AmmoSlot{
@@ -24,7 +30,12 @@ public class Ammo : MonoBehaviour
 
     public void IncreaseCurrentAmmo(AmmoType ammoType, int amount)
     {
-        GetAmmoSlot(ammoType).ammoAmount += amount;
+        if(ammoType == AmmoType.Health){
+            player.Heal(amount);
+        }
+        else{
+            GetAmmoSlot(ammoType).ammoAmount += amount;
+        }
     }
 
     private AmmoSlot GetAmmoSlot(AmmoType ammoType){

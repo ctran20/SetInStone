@@ -2,5 +2,6 @@
 {
     RedJuice,
     YellowJuice,
-    BlueJuice
+    BlueJuice,
+    Health
 }

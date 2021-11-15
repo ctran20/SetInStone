@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject area4;
 
     [SerializeField] GameObject boss;
+    [SerializeField] GameObject bossHealthBar;
 
     Data data;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
             playerA3.SetActive(true);
             area3.SetActive(true);
             boss.SetActive(true);
+            bossHealthBar.SetActive(true);
         }
     }
 
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
                 //leaveArea3
                 area3.SetActive(false);
                 area4.SetActive(true);
+                bossHealthBar.SetActive(false);
                 break;
             default:
                 Debug.Log("Unknow area value: " + box);
