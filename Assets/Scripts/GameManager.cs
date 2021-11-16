@@ -48,24 +48,30 @@ public class GameManager : MonoBehaviour
     void Update(){
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(paused){
-                paused = false;
-                pauseMenu.SetActive(false);
-                Time.timeScale = 1;
-                FindObjectOfType<WeaponSwitcher>().enabled = true;
-                FindObjectOfType<Weapon>().enabled = true;
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else{
-                paused = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0;
-                FindObjectOfType<WeaponSwitcher>().enabled = false;
-                FindObjectOfType<Weapon>().enabled = false;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+            PauseTrigger();
+        }
+    }
+
+    public void PauseTrigger(){
+        if (paused)
+        {
+            paused = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+            FindObjectOfType<WeaponSwitcher>().enabled = true;
+            FindObjectOfType<Weapon>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            paused = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+            FindObjectOfType<WeaponSwitcher>().enabled = false;
+            FindObjectOfType<Weapon>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
