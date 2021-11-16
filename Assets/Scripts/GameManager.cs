@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             case 1:
                 //leaveArea1
                 area2.SetActive(true);
-                Destroy(music1);
+                Destroy(GameObject.FindWithTag("Music1"), 1f);
                 break;
             case 2:
                 //enterArea2
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
             case 3:
                 //leaveArea2
                 area3.SetActive(true);
-                Destroy(music2);
+                Destroy(GameObject.FindWithTag("Music2"), 1f);
                 break;
             case 4:
                 //enterArea3

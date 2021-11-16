@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 160467353184883674}
   - component: {fileID: 162195654076328810}
   - component: {fileID: 171681411201775374}
+  - component: {fileID: 4258111111936054676}
   m_Layer: 0
   m_Name: RedCeilingLight
   m_TagString: Untagged
@@ -85,6 +86,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4258111111936054676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158119839244798506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e837697bb20b3f41bb94229068e12a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 50
+  objects:
+  - {fileID: 3263069246207177287}
 --- !u!1 &3263069244998093139
 GameObject:
   m_ObjectHideFlags: 0
