@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject playerA1;
@@ -55,6 +55,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
     public void PauseTrigger(){
         if (paused)
         {

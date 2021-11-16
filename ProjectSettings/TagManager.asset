@@ -9,6 +9,7 @@ TagManager:
   - Music1
   - Music2
   - Music3
+  - Data
   layers:
   - Default
   - TransparentFX
