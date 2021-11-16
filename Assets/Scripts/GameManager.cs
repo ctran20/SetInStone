@@ -31,15 +31,18 @@ public class GameManager : MonoBehaviour
         if (data.getStage() == 1){
             playerA1.SetActive(true);
             area1.SetActive(true);
+            music1.SetActive(true);
         }
         else if (data.getStage() == 2)
         {
             playerA2.SetActive(true);
             area2.SetActive(true);
+            music2.SetActive(true);
         }
         else{
             playerA3.SetActive(true);
             area3.SetActive(true);
+            music3.SetActive(true);
             boss.SetActive(true);
             bossHealthBar.SetActive(true);
         }
@@ -80,25 +83,26 @@ public class GameManager : MonoBehaviour
             case 1:
                 //leaveArea1
                 area2.SetActive(true);
+                Destroy(music1);
                 break;
             case 2:
                 //enterArea2
                 data.setStage(2);
                 area1.SetActive(false);
-                music2.SetActive(true);
-                music1.SetActive(false);
+                music2.SetActive(true);   
                 break;
             case 3:
                 //leaveArea2
                 area3.SetActive(true);
-                music3.SetActive(true);
-                music2.SetActive(false);
+                Destroy(music2);
                 break;
             case 4:
                 //enterArea3
                 data.setStage(3);
+                music3.SetActive(true);
                 area2.SetActive(false);
                 boss.SetActive(true);
+                bossHealthBar.SetActive(true);
                 ambient1.SetActive(false);
                 break;
             case 5:
