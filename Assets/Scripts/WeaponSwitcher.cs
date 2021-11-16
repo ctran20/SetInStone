@@ -6,6 +6,9 @@ using UnityEngine;
 public class WeaponSwitcher : MonoBehaviour
 {
     [SerializeField] int currentWeapon = 0;
+    [SerializeField] GameObject redIcon;
+    [SerializeField] GameObject yellowIcon;
+    [SerializeField] GameObject blueIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,22 @@ public class WeaponSwitcher : MonoBehaviour
     private void SetWeaponActive()
     {
         int weaponIndex = 0;
+        
+        if(currentWeapon == 0){
+            redIcon.SetActive(true);
+            yellowIcon.SetActive(false);
+            blueIcon.SetActive(false);
+        }
+        else if(currentWeapon == 1){
+            redIcon.SetActive(false);
+            yellowIcon.SetActive(true);
+            blueIcon.SetActive(false);
+        }
+        else{
+            redIcon.SetActive(false);
+            yellowIcon.SetActive(false);
+            blueIcon.SetActive(true);
+        }
 
         foreach(Transform weapon in transform)
         {
@@ -36,7 +55,7 @@ public class WeaponSwitcher : MonoBehaviour
         ProcessKeyInput();
         ProcessScrollWheel();
 
-        if(previousWeapon == currentWeapon){
+        if(previousWeapon != currentWeapon){
             SetWeaponActive();
         }
     }
