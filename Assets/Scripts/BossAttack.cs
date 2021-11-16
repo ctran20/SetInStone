@@ -11,6 +11,9 @@ public class BossAttack : MonoBehaviour
     [SerializeField] GameObject rightLava;
     [SerializeField] ParticleSystem portal;
     [SerializeField] GameObject bots;
+    [SerializeField] GameObject deadPortal;
+    [SerializeField] GameObject lavaFloor;
+
     AudioSource audioSrc;
 
     public bool inLaser = false;
@@ -93,5 +96,10 @@ public class BossAttack : MonoBehaviour
         portal.Play();
         Instantiate(bots, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z + 4), new Quaternion(0, 0, 0, 0));
         Instantiate(bots, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 10, gameObject.transform.position.z + 4), new Quaternion(0, 0, 0, 0));
+    }
+
+    public void BossDied(){
+        deadPortal.SetActive(true);
+        lavaFloor.GetComponent<MoveAndDie>().enabled = true;
     }
 }

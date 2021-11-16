@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
                 data.setStage(3);
                 music3.SetActive(true);
                 area2.SetActive(false);
-                boss.SetActive(true);
+                if(boss) boss.SetActive(true);
                 bossHealthBar.SetActive(true);
                 ambient1.SetActive(false);
                 break;

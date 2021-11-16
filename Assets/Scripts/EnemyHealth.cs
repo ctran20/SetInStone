@@ -35,7 +35,10 @@ public class EnemyHealth : MonoBehaviour
         if(hitPoints < 0 && !isDead){
             Die();
             collidr.enabled = false;
-            if(slider) slider.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            if (slider) {
+                slider.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+                FindObjectOfType<BossAttack>().BossDied();
+            }
             Destroy(gameObject, destroyTime);
         }
         if (slider) {
