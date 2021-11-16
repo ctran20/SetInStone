@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject boss;
     [SerializeField] GameObject bossHealthBar;
 
+    [SerializeField] GameObject music1;
+    [SerializeField] GameObject music2;
+    [SerializeField] GameObject music3;
+    [SerializeField] GameObject ambient1;
+
     Data data;
 
     void Start()
@@ -47,16 +52,21 @@ public class GameManager : MonoBehaviour
                 //enterArea2
                 data.setStage(2);
                 area1.SetActive(false);
+                music2.SetActive(true);
+                music1.SetActive(false);
                 break;
             case 3:
                 //leaveArea2
                 area3.SetActive(true);
+                music3.SetActive(true);
+                music2.SetActive(false);
                 break;
             case 4:
                 //enterArea3
                 data.setStage(3);
                 area2.SetActive(false);
                 boss.SetActive(true);
+                ambient1.SetActive(false);
                 break;
             case 5:
                 //leaveArea3
