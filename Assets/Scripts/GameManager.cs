@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject boss;
     [SerializeField] GameObject bossHealthBar;
+    [SerializeField] GameObject winText;
+    [SerializeField] GameObject pauseMenu;
 
     [SerializeField] GameObject music1;
     [SerializeField] GameObject music2;
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject ambient1;
 
     Data data;
+    bool paused = false;
 
     void Start()
     {
@@ -39,6 +42,30 @@ public class GameManager : MonoBehaviour
             area3.SetActive(true);
             boss.SetActive(true);
             bossHealthBar.SetActive(true);
+        }
+    }
+
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(paused){
+                paused = false;
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1;
+                FindObjectOfType<WeaponSwitcher>().enabled = true;
+                FindObjectOfType<Weapon>().enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else{
+                paused = true;
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0;
+                FindObjectOfType<WeaponSwitcher>().enabled = false;
+                FindObjectOfType<Weapon>().enabled = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
     }
 
@@ -73,6 +100,7 @@ public class GameManager : MonoBehaviour
                 area3.SetActive(false);
                 area4.SetActive(true);
                 bossHealthBar.SetActive(false);
+                winText.SetActive(true);
                 break;
             default:
                 Debug.Log("Unknow area value: " + box);
