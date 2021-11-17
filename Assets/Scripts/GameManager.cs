@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bossHealthBar;
     [SerializeField] GameObject winText;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject helpMenu;
 
     [SerializeField] GameObject music1;
     [SerializeField] GameObject music2;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
         {
             paused = false;
             pauseMenu.SetActive(false);
+            helpMenu.SetActive(false);
             Time.timeScale = 1;
             FindObjectOfType<WeaponSwitcher>().enabled = true;
             FindObjectOfType<Weapon>().enabled = true;
